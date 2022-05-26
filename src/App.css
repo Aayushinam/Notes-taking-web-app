@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  /* GLOBAL STYLES */
+  
+  body,
+  .App {
+    font-family: sans-serif;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-size: 16px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  button {
+    background: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    color: #08c;
   }
-}
+  button:hover {
+    color: #04c;
+  }
+  
+  .App {
+    display: flex;
+  }
+  
+  /* SIDEBAR STYLES */
+  
+  .app-sidebar {
+    width: 30%;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+  }
+  
+  .app-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+  }
+  .app-sidebar-header h1 {
+    margin: 0;
+  }
+  
+  .app-sidebar-notes {
+    height: calc(100vh - 78px);
+    overflow-y: scroll;
+  }
+  .app-sidebar-note {
+    padding: 25px;
+    cursor: pointer;
+  }
+  .sidebar-note-title {
+    display: flex;
+    justify-content: space-between;
+  }
+  .app-sidebar-note button {
+    color: rgb(226, 21, 21);
+  }
+  .app-sidebar-note p {
+    margin: 10px 0;
+  }
+  .app-sidebar-note small {
+    display: block;
+    color: #999;
+  }
+  
+  .app-sidebar-note:hover {
+    background: #ddd;
+  }
+
+  
+  /* NOTE EDITOR/PREVIEW (MAIN) STYLES */
+  
+  .app-main {
+    width: 70%;
+    height: 100vh;
+  }
+  .app-main-note-edit,
+  .app-main-note-preview {
+    height: 50vh;
+  }
+  
+  .no-active-note {
+    width: 70%;
+    height: 100vh;
+    line-height: 100vh;
+    text-align: center;
+    font-size: 2rem;
+    color: #999;
+  }
+  
+  /* Editing */
+  .app-main-note-edit {
+    padding: 25px;
+  }
+  
+  .app-main-note-edit input,
+  textarea {
+    display: block;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    width: 100%;
+    height: calc(50vh - 130px);
+    padding: 10px;
+    resize: none;
+    font-size: inherit;
+    font-family: inherit;
+  }
+  .app-main-note-edit input {
+    height: 50px;
+    font-size: 2rem;
+  }
